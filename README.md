@@ -1,6 +1,6 @@
 ScrollDetector
 =============
-ScrollDetector is a library for android developer to detect whether a view is scrollable, you can integrate it into your project which has custom view want to intercept touch event. this library can help you decide view touch event should be intercepted.
+ScrollDetector is a library for android developer to detect whether a view is scrollable, you can integrate it into your project which has custom view want to intercept touch event. this library can help you to decide which touch event should be intercepted.
 
 #Setup
 1. Clone this project from [Github][1]
@@ -10,12 +10,15 @@ ScrollDetector is a library for android developer to detect whether a view is sc
 #Usage
 ```java
 ListView listView = new ListView(context);
-Scrollable<ListView> scrollable = ScrollDetects.detect(listView);
+Scrollable<ListView> scrollable = ScrollDetectors.detect(listView);
 scrollable.canScrollLeft();
 scrollable.canScrollRight();
 scrollable.canScrollUp();
 scrollable.canScrollDown();
 ```
+
+#Support
+This library only support ListView, ScrollView, GridView, WebView, HorizontalScrollView, ViewPager scroll detect, and more will be added soon.
 
 #Author
 Tang Ke
