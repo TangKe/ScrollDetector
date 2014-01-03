@@ -15,6 +15,7 @@ scrollable.canScrollLeft();
 scrollable.canScrollRight();
 scrollable.canScrollUp();
 scrollable.canScrollDown();
+```
 
 #Author
 Tang Ke
