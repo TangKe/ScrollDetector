@@ -19,7 +19,7 @@ public class WebViewScrollDetectorActivity extends BaseScrollDetectorActivity {
 		super.onContentChanged();
 		mWebView = (WebView) findViewById(R.id.target);
 		mWebView.setWebViewClient(new BaseWebViewClient());
-		mWebView.loadUrl("http://www.sina.com");
+		mWebView.loadUrl("http://github.com");
 	}
 
 	private class BaseWebViewClient extends WebViewClient {
