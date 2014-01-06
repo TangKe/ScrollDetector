@@ -17,6 +17,7 @@ package me.tangke.scrolldetector;
 import java.util.WeakHashMap;
 
 import me.tangke.scrolldetector.detector.DefaultScrollDetector;
+import me.tangke.scrolldetector.detector.GalleryScrollDetector;
 import me.tangke.scrolldetector.detector.GridViewScrollDetector;
 import me.tangke.scrolldetector.detector.HorizontalScrollViewScrollDetector;
 import me.tangke.scrolldetector.detector.ListViewScrollDetector;
@@ -26,6 +27,7 @@ import me.tangke.scrolldetector.detector.WebViewScrollDetector;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.Gallery;
 import android.widget.GridView;
 import android.widget.HorizontalScrollView;
 import android.widget.ListView;
@@ -88,6 +90,8 @@ public class ScrollDetectors {
 			imple = new GridViewScrollDetector();
 		} else if (v instanceof ScrollView) {
 			imple = new ScrollViewScrollDetector();
+		} else if (v instanceof Gallery) {
+			imple = new GalleryScrollDetector();
 		} else {
 			imple = new DefaultScrollDetector();
 		}

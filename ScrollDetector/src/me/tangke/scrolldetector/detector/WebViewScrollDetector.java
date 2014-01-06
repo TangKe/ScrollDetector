@@ -57,7 +57,7 @@ public class WebViewScrollDetector implements ScrollDetector<WebView> {
 		try {
 			final int horizontalScrollOffset = (Integer) mComputeHorizontalScrollOffsetMethod
 					.invoke(view);
-			final int horizontalScrollRange = (Integer) mComputeHorizontalScrollOffsetMethod
+			final int horizontalScrollRange = (Integer) mComputeHorizontalScrollRangeMethod
 					.invoke(view);
 			return horizontalScrollOffset < horizontalScrollRange
 					- view.getWidth();
