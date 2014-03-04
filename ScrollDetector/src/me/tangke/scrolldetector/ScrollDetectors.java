@@ -42,6 +42,7 @@ import android.widget.ScrollView;
 public class ScrollDetectors {
 	private final static WeakHashMap<Class<? extends View>, ScrollDetector<?>> sDetectorImples = new WeakHashMap<Class<? extends View>, ScrollDetector<?>>();
 	private final static WeakHashMap<View, Scrollable<?>> sScrollableCaches = new WeakHashMap<View, Scrollable<?>>();
+	private static ScrollDetectorFactory sFactory;
 
 	/**
 	 * 
@@ -70,6 +71,10 @@ public class ScrollDetectors {
 		return scrollable;
 	}
 
+	public static void setScrollDetectorFactory(ScrollDetectorFactory factory) {
+		sFactory = factory;
+	}
+
 	public static <T extends View> ScrollDetector<T> getScrollDetectorImpl(T v) {
 		Class<? extends View> clazz = v.getClass();
 		ScrollDetector imple = sDetectorImples.get(clazz);
@@ -92,6 +97,8 @@ public class ScrollDetectors {
 			imple = new ScrollViewScrollDetector();
 		} else if (v instanceof Gallery) {
 			imple = new GalleryScrollDetector();
+		} else if (null != sFactory) {
+			imple = sFactory.newScrollDetector(v);
 		} else {
 			imple = new DefaultScrollDetector();
 		}
