@@ -1,7 +1,7 @@
 package me.tangke.scrolldetector.detector;
 
-import android.widget.Gallery;
 import me.tangke.scrolldetector.ScrollDetector;
+import android.widget.Gallery;
 
 public class GalleryScrollDetector implements ScrollDetector<Gallery> {
 

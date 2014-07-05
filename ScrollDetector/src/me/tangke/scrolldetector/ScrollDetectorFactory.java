@@ -10,5 +10,5 @@ import android.view.View;
  * 
  */
 public interface ScrollDetectorFactory {
-	public <T extends View> ScrollDetector<T> newScrollDetector(T view);
+	public ScrollDetector newScrollDetector(View view);
 }

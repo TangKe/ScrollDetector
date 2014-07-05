@@ -99,7 +99,9 @@ public class ScrollDetectors {
 			imple = new GalleryScrollDetector();
 		} else if (null != sFactory) {
 			imple = sFactory.newScrollDetector(v);
-		} else {
+		}
+		
+		if (null == imple) {
 			imple = new DefaultScrollDetector();
 		}
 
